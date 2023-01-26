@@ -44,6 +44,8 @@ dependencies:
   printing: ^5.9.3
   pdf_render: ^1.3.6
   file_saver: ^0.1.1
+  provider: ^6.0.3
+
 
 dev_dependencies:
   flutter_test:
@@ -73,10 +75,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/images/background.jpg
-    - assets/images/background-login.jpg
     - assets/images/logo-pacto.png
-    - assets/images/1.png
-    - assets/images/2.png
     - assets/images/3.png
 
   

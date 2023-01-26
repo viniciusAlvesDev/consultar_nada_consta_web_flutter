@@ -1,9 +1,5 @@
 import 'package:consultar_nada_consta/components/body/body_visualizar_info_nada_consta.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
 import '../components/footer/footer.dart';
 import '../components/headers/headerMobile.dart';
 import '../components/headers/headerWeb.dart';

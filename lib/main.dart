@@ -1,11 +1,18 @@
+import 'package:consultar_nada_consta/utils/provider.dart';
 import 'package:consultar_nada_consta/view/consultar_nada_cosnta.dart';
 import 'package:consultar_nada_consta/utils/routes.dart';
 import 'package:consultar_nada_consta/view/vizualizar_info_nada_consta.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: providers,
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
