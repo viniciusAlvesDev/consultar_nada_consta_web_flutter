@@ -7,9 +7,9 @@ class ConsultarNadaConstaApi {
   consultar(String numValidador) async {
     NadaConstaModel? nadaConstaModel;
 
-    Uri uri = Uri.parse("http://pactolino.com.br/pactoapps/nadaConsta/validar/?numero=$numValidador");
+    Uri url = Uri.parse("http://pactolino.com.br/pactoapps/nadaConsta/validar/?numero=$numValidador");
 
-    http.Response response = await http.get(uri);
+    http.Response response = await http.get(url);
 
     if (response.statusCode == 200) {
       Map<String, dynamic> retorno = jsonDecode(utf8.decode(response.bodyBytes));
