@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:consultar_nada_consta/components/alerta/alert.dart';
 import 'package:consultar_nada_consta/controller/consultar_nada_consta_controller.dart';
 import 'package:consultar_nada_consta/controller/gerar_pdf_controller.dart';
@@ -8,7 +10,9 @@ import 'package:printing/printing.dart';
 import 'package:provider/provider.dart';
 
 class BodyVisualizarInfoNadaConsta extends StatefulWidget {
-  const BodyVisualizarInfoNadaConsta({super.key});
+  const BodyVisualizarInfoNadaConsta({
+    super.key,
+  });
 
   @override
   State<BodyVisualizarInfoNadaConsta> createState() => _BodyVisualizarInfoNadaConstaState();
@@ -17,7 +21,6 @@ class BodyVisualizarInfoNadaConsta extends StatefulWidget {
 class _BodyVisualizarInfoNadaConstaState extends State<BodyVisualizarInfoNadaConsta> {
   TextEditingController controller = TextEditingController();
   Uint8List? pdfDownload;
-
   String? numero = "";
   String? dataEmissao = "";
   String? periodo = "";
@@ -88,7 +91,7 @@ class _BodyVisualizarInfoNadaConstaState extends State<BodyVisualizarInfoNadaCon
                                 ),
                                 const SizedBox(width: 100),
                                 const Tooltip(
-                                  message: "\nEsse ambiente te proporciona a opção de cadastrar novos espaços!\n\n\nOBS: Para realizar o cadastro de uma nova reserva, é necessário preencher \ntodos os campos do formulário.\n",
+                                  message: "\nEsse ambiente te proporciona a opção de validar nº validador do nada consta!\n",
                                   child: Icon(Icons.info_outline),
                                 )
                               ],
@@ -125,7 +128,8 @@ class _BodyVisualizarInfoNadaConstaState extends State<BodyVisualizarInfoNadaCon
                                         style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
                                       ),
                                       SizedBox(height: 5),
-                                      Text("Espaço reservado a descrição e explicação do documento. sssssssssssssssssss ssssssssssssssssss ssssssssssssssssss ssssssssssssss sssssssssssss s sssssssssssss ssss ssssssssssssssss ss"),
+                                      Text(
+                                          "A Declaração de Nada Consta, também denominada de Declaração de Quitação de Débitos, é uma declaração que atesta a inexistência de pendências. \n\nNormalmente, as certidões negativas são requeridas em processos de licitação, de concorrência, de cadastro ou homologações perante a fornecedores, bancos e empréstimos."),
                                     ],
                                   ),
                                 ),
@@ -315,7 +319,6 @@ class _BodyVisualizarInfoNadaConstaState extends State<BodyVisualizarInfoNadaCon
 
                                       gerarPdfNadaConstaController.pdf != null
                                           ? await FileSaver.instance.saveFile("NadaCosta", gerarPdfNadaConstaController.pdf!, ".pdf", mimeType: MimeType.PDF)
-                                          // ignore: use_build_context_synchronously
                                           : alertError(
                                               context,
                                               "Erro ao carregar",
@@ -336,7 +339,6 @@ class _BodyVisualizarInfoNadaConstaState extends State<BodyVisualizarInfoNadaCon
 
                                       gerarPdfNadaConstaController.pdf != null
                                           ? await Printing.layoutPdf(onLayout: (_) => gerarPdfNadaConstaController.pdf!.buffer.asUint8List())
-                                          // ignore: use_build_context_synchronously
                                           : alertError(
                                               context,
                                               "Erro ao carregar",

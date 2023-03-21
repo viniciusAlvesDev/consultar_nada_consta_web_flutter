@@ -3,4 +3,5 @@
 class Routes {
   static const CONSULTAR_NADA_CONSTA = '/consultar-nada-consta';
   static const VISUALIZAR_INFO_NADA_CONSTA = '/visualizar-info-nada-consta';
+  static const SPLASH_PAGE = '/splash-page';
 }

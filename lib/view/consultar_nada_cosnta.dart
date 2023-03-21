@@ -1,5 +1,7 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:consultar_nada_consta/controller/consultar_nada_consta_controller.dart';
-import 'package:consultar_nada_consta/utils/routes.dart';
+import 'package:consultar_nada_consta/view/vizualizar_info_nada_consta.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
@@ -198,7 +200,12 @@ class _ConsultarNadaConstaState extends State<ConsultarNadaConsta> {
                                       await consultarNadaConstaController.getValidaData(ctrlNumValidador.text);
 
                                       if (consultarNadaConstaController.nadaConstaModel != null) {
-                                        Navigator.pushNamed(context, Routes.VISUALIZAR_INFO_NADA_CONSTA);
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => const VisualizarInfoNadaConsta()),
+                                        );
+                                        loading.value = false;
+                                        ctrlNumValidador.text = "";
                                       } else {
                                         setState(() {
                                           erroValidarNadaCosta.value = true;

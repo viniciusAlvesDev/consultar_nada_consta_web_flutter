@@ -27,12 +27,12 @@ class _HeaderWebState extends State<HeaderWeb> {
         child: Padding(
           padding: const EdgeInsets.only(left: 30.0),
           child: Image.asset(
-            "images/logo-pacto.png",
+            "assets/images/logo-pacto.png",
             height: 50,
           ),
         ),
         onTap: () {
-           urlHome;
+          urlHome;
         },
       ),
       toolbarHeight: 90,
